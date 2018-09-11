@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/07_remark/" method="post">
+
+        {% comment "Shou Dong Jie Xi"%}
+        {% for field in form %}
+            <p>
+                <span>{{ field.label }}</span>:{{ field }}
+            </p>
+        {% endfor %}
+        {% endcomment %}
+
+        {% comment "as_p" %}
+        {{ form.as_p }}
+        {% endcomment %}
+
+        {% comment "as_ul" %}
+        <ul>
+            {{ form.as_ul }}
+            <li>
+                <input type="submit" value="Send">
+            </li>
+        </ul>
+        {% endcomment %}
+        <!-- 渲染成table -->
+        <table border="1">
+            {{ form.as_table }}
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Send">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

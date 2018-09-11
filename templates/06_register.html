@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>{{ errMsg }}</p>
+    <form action="/09_register/" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <p>
+            <input type="submit" value="注册">
+        </p>
+    </form>
+</body>
+</html>
